@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Formulir Pendaftaran Mahasiswa Baru</title>
+  <link rel="stylesheet" href="CSS/form.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Formulir Pendaftaran Mahasiswa Baru</h1>
+
+    <form id="pendaftaran" action="#" method="post" enctype="multipart/form-data" autocomplete="on">
+
+      <!-- ====================== A. DATA PRIBADI ====================== -->
+      <fieldset>
+        <legend>A. Data Pribadi</legend>
+
+        <label for="nama">1. Nama Lengkap</label>
+        <input id="nama" name="nama_lengkap" type="text" required placeholder="Nama lengkap sesuai dokumen" />
+
+        <label for="tempat_lahir">2. Tempat, Tanggal Lahir</label>
+        <input id="tempat_lahir" name="tempat_lahir" type="text" required placeholder="Contoh: Bandung" />
+        <input id="tgl_lahir" name="tanggal_lahir" type="date" required />
+
+        <label>3. Jenis Kelamin</label>
+        <div role="group">
+          <input id="jk_l" type="radio" name="jenis_kelamin" value="Laki-laki" required />
+          <label for="jk_l">Laki-laki</label>
+          <input id="jk_p" type="radio" name="jenis_kelamin" value="Perempuan" />
+          <label for="jk_p">Perempuan</label>
+        </div>
+
+        <label for="agama">4. Agama</label>
+        <input id="agama" name="agama" type="text" required placeholder="Islam / Kristen / Hindu / dsb." />
+
+        <label for="alamat">5. Alamat Lengkap</label>
+        <textarea id="alamat" name="alamat" rows="3" required placeholder="Alamat sesuai KTP / KK"></textarea>
+
+        <label for="hp">6. No. HP / WhatsApp</label>
+        <input id="hp" name="no_hp" type="tel" pattern="[0-9+\\s-]{6,20}" required placeholder="08xxxx..." />
+
+        <label for="email">7. Email</label>
+        <input id="email" name="email" type="email" required placeholder="email@contoh.com" />
+
+        <label for="nik">8. Nomor Induk Kependudukan (NIK)</label>
+        <input id="nik" name="nik" type="text" pattern="\\d{10,20}" required placeholder="NIK (tanpa spasi)" />
+      </fieldset>
+
+      <!-- ====================== B. DATA PENDIDIKAN ====================== -->
+      <fieldset>
+        <legend>B. Data Pendidikan</legend>
+
+        <label for="asal_sekolah">1. Asal Sekolah</label>
+        <input id="asal_sekolah" name="asal_sekolah" type="text" required />
+
+        <label for="jurusan_asal">2. Jurusan Asal</label>
+        <input id="jurusan_asal" name="jurusan_asal" type="text" />
+
+        <label for="tahun_lulus">3. Tahun Lulus</label>
+        <input id="tahun_lulus" name="tahun_lulus" type="number" min="1900" max="2099" step="1" required />
+
+        <label for="nilai">4. Nilai Rata-Rata Rapor / Ijazah</label>
+        <input id="nilai" name="nilai_rata" type="text" placeholder="Contoh: 8.20 / 85" />
+      </fieldset>
+
+      <!-- ====================== C. PROGRAM STUDI ====================== -->
+      <fieldset>
+        <legend>C. Program Studi yang Dipilih</legend>
+
+        <label for="pil1">Pilihan 1</label>
+        <input id="pil1" name="pilihan_1" type="text" required />
+
+        <label for="pil2">Pilihan 2</label>
+        <input id="pil2" name="pilihan_2" type="text" />
+      </fieldset>
+
+      <!-- ====================== D. DATA ORANG TUA / WALI ====================== -->
+      <fieldset>
+        <legend>D. Data Orang Tua / Wali</legend>
+
+        <label for="ayah">1. Nama Ayah</label>
+        <input id="ayah" name="nama_ayah" type="text" />
+
+        <label for="pekerjaan_ayah">2. Pekerjaan Ayah</label>
+        <input id="pekerjaan_ayah" name="pekerjaan_ayah" type="text" />
+
+        <label for="ibu">3. Nama Ibu</label>
+        <input id="ibu" name="nama_ibu" type="text" />
+
+        <label for="pekerjaan_ibu">4. Pekerjaan Ibu</label>
+        <input id="pekerjaan_ibu" name="pekerjaan_ibu" type="text" />
+
+        <label for="alamat_orangtua">5. Alamat Orang Tua / Wali</label>
+        <textarea id="alamat_orangtua" name="alamat_orangtua" rows="2"></textarea>
+
+        <label for="hp_orangtua">6. No. HP Orang Tua / Wali</label>
+        <input id="hp_orangtua" name="hp_orangtua" type="tel" pattern="[0-9+\\s-]{6,20}" />
+      </fieldset>
+
+      <!-- ====================== E. BERKAS LAMPIRAN ====================== -->
+      <fieldset>
+        <legend>E. Berkas yang Dilampirkan</legend>
+
+        <label><input type="checkbox" name="lamp_ijazah" value="1" /> Fotokopi Ijazah / SKL</label>
+        <label><input type="checkbox" name="lamp_ktp" value="1" /> Fotokopi KTP / Kartu Pelajar</label>
+        <label><input type="checkbox" name="lamp_kk" value="1" /> Fotokopi Kartu Keluarga</label>
+
+        <label for="pasfoto">Pas Foto 3x4 (maks 2 file)</label>
+        <input id="pasfoto" name="pasfoto[]" type="file" accept="image/*" multiple />
+
+        <label for="dokumen_lain">Dokumen lain (opsional)</label>
+        <input id="dokumen_lain" name="dokumen_lain" type="file" accept="application/pdf,image/*" />
+      </fieldset>
+
+      <!-- ====================== F. PERSETUJUAN ====================== -->
+      <fieldset>
+        <legend>F. Persetujuan</legend>
+        <label>
+          <input type="checkbox" id="setuju" name="setuju" required />
+          Saya menyatakan bahwa data yang saya isi adalah benar dan lengkap.
+        </label>
+      </fieldset>
+
+      <div>
+        <button type="submit">Kirim Pendaftaran</button>
+        <button type="reset">Reset</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>
