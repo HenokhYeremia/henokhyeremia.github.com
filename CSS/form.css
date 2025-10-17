@@ -1,0 +1,168 @@
+/* ======================================================
+   File: css/style.css
+   Deskripsi: Tampilan utama Formulir Pendaftaran Mahasiswa Baru
+   Struktur proyek diasumsikan:
+   form-pendaftaran-mahasiswa/
+   ├── index.html
+   ├── css/
+   │   └── style.css
+   └── sections/
+       ├── data_pribadi.html
+       ├── data_pendidikan.html
+       ├── program_studi.html
+       ├── data_orangtua.html
+       ├── lampiran.html
+       └── persetujuan.html
+   ====================================================== */
+
+/* RESET DASAR */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* KONTENER UTAMA */
+.container {
+  max-width: 850px;
+  background: #fff;
+  margin: 2rem auto;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #1a3c64;
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+}
+
+/* FORM FIELD */
+fieldset {
+  border: 1px solid #d1d9e0;
+  border-radius: 10px;
+  padding: 1.5rem 1.5rem 1rem;
+  margin-bottom: 1.5rem;
+  background-color: #fafbfc;
+}
+
+legend {
+  font-weight: 600;
+  color: #1a3c64;
+  padding: 0 0.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #222;
+  margin-top: 1rem;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.55rem 0.7rem;
+  margin-top: 0.3rem;
+  border: 1px solid #c9d3df;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: border-color 0.2s ease;
+  background-color: #fff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2a5f9e;
+  outline: none;
+}
+
+/* RADIO DAN CHECKBOX */
+input[type="radio"], input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.4rem;
+  accent-color: #2a5f9e;
+}
+
+/* TOMBOL */
+button {
+  background-color: #2a5f9e;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.7rem 1.2rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-size: 1rem;
+  transition: background-color 0.25s ease, transform 0.15s ease;
+}
+
+button:hover {
+  background-color: #3578c0;
+  transform: translateY(-1px);
+}
+
+button:active {
+  background-color: #255a92;
+  transform: translateY(0);
+}
+
+/* RESPONSIF */
+@media (min-width: 768px) {
+  fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+  }
+  label {
+    grid-column: span 2;
+  }
+  input,
+  textarea,
+  select {
+    width: 100%;
+  }
+  button {
+    grid-column: span 2;
+  }
+}
+
+/* TATA LETAK KHUSUS */
+textarea {
+  resize: vertical;
+}
+
+div[role="group"] label {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+/* PERINGATAN DAN PERSYARATAN */
+input:invalid {
+  border-color: #e74c3c;
+}
+
+input:valid {
+  border-color: #2ecc71;
+}
+
+/* FOOTER FORM (TANDA TANGAN, CATATAN, DST) */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  color: #666;
+}
